@@ -1,0 +1,94 @@
+
+<div *ngIf ="html; else elses " >
+    <H1 class="CENTER">ANGULAR</H1>
+</div>
+<br>
+<ng-template #elses>
+    <button class="btn btn-primary" > ELSE </button>
+</ng-template>
+ 
+
+<table class="table table-striped" >
+    <thead>
+        <tr>
+          <td>RUBRO</td>
+          <td>CANTIDAD</td>
+          <td>COLOR</td>
+          <td>AUTOMATICO</td>
+
+          
+        </tr>
+      </thead>
+<tbody>
+
+    <tr *ngFor="let listas of lista;let indice = index" >
+            <td > 
+            {{indice+1}}
+            {{listas}}
+        </td>
+    </tr>
+ </tbody>   
+</table>
+
+<ul>
+    <li *ngFor="let listas of lista; let indice=index">
+        {{indice+1}}
+        {{listas}}
+
+    </li>
+</ul>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<div class="container">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>Papel</td>
+          <td>Estado</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actor of actores">
+          <td>{{actor.actor_name}}</td>
+          <td>{{actor.character_name}}</td>
+          <td>{{actor.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <b>Menu</b>
+      <nav>
+        <a routerLink="/libros">libros</a>
+        <br>
+        <a routerLink="/addlibros">AddLibros</a>
+        <br>
+        <a routerLink="/editarlibros">EditarLibros</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
